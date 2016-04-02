@@ -40,6 +40,7 @@ public class SkeletonJava {
     public static void printGUI(double text) {
         JOptionPane.showMessageDialog(null, text);
     }
+
     // CONSOLE
     public static String readStringConsole(String label) {
         System.out.print(label);
@@ -73,14 +74,59 @@ public class SkeletonJava {
     /* end of utility methods*/
 
 
-    /* here starts the main class */
+    /* here starts the main class - exercitiu in clasa */
     public static void main(String[] arguments) {
-        int a = readIntGUI("Introduceti un numar:"); // input using GUI
-        printGUI("Ati introdus:" + a); // output using GUI
 
-        int b = readIntConsole("Introduceti alt numar:");  // input using console
-        printConsole("Ati introdus:" + b); // output using console
+//        //declar un array
+//        int[] noteMate = {5,6,2,9};
+//        int suma=0;
+//        for(int i=0; i<noteMate.length; i++) { // parcurgere
+//            suma = suma + noteMate[i];
+//            System.out.println("pas:" + i + "suma=" + suma);
+//        }
+//        int media = suma/noteMate.length;
+//        System.out.println(media);
+//
+//        // declaram  sirul si lungimea
+//
+//        int[] note = new int[3];
+//        note[0]=7;
+//        note[1]=5;
+//
+//        for(int i=0; i<note.length; i++) {
+//            note[i]=readIntGUI("introdu nota");
+//            System.out.println(note[i]);
+//        }
+//        System.out.println(note.length);
+
+        //exercitiu
+
+        int sum=0;
+        int[] note = new int[2];
+        for(int i=0; i<note.length; i++) {
+            note[i] = readIntGUI("introduceti nota");
+            sum += note[i];
+        }
+        int media = sum/note.length;
+        System.out.println("media e: "+media);
+        int max = note[0];
+        for(int i=0; i<note.length; i++){
+            if (note[i]>max) {
+                max = note[i];
+            }
+
+            System.out.println("nota maxima e: "+max);
+        }
+
+        int suma;
+        int numar;
+        do {
+            numar=readIntGUI("introduceti numar: ");
+            sum += numar;
+        }
     }
     //end of main method
+
+
 }
 // end of class
